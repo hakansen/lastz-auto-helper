@@ -40,6 +40,6 @@ Download `LastZAutoHelper-Setup.exe` from the [latest release](https://github.co
 
 This repository only hosts the website, version information and release downloads.
 Last Z Auto Helper is **closed-source**; the application source code is not published here.
-See [LICENSE](LICENSE) for the terms of use.
+See [LICENSE](LICENSE) for the terms of use and the [privacy policy](https://hakansen.github.io/lastz-auto-helper/privacy.html).
 
 Developed by **HQN**. Not affiliated with, endorsed or sponsored by the developers of Last Z.

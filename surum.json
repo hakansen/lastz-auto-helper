@@ -1,13 +1,25 @@
 {
   "urun": "LastZAutoHelper",
-  "son_surum": "1.2.2",
+  "son_surum": "1.2.3",
   "yayin_tarihi": "2026-09-26",
   "indirme_adresi": "https://github.com/hakansen/lastz-auto-helper/releases/latest/download/LastZAutoHelper-Setup.exe",
   "notlar": {
-    "en": "Help is now also given while the chat is open.",
-    "tr": "Sohbet açıkken de yardım veriliyor."
+    "en": "New app icon and Microsoft Store support.",
+    "tr": "Yeni uygulama simgesi ve Microsoft Store desteği."
   },
   "gecmis": [
+    {
+      "surum": "1.2.3",
+      "tarih": "2026-09-26",
+      "yeni": [
+        "Microsoft Store support: the Store version is updated by the Store and uses the Windows startup settings"
+      ],
+      "gelistirme": [
+        "New original app icon",
+        "Privacy policy page on the website"
+      ],
+      "duzeltme": []
+    },
     {
       "surum": "1.2.2",
       "tarih": "2026-09-26",
