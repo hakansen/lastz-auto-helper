@@ -1,13 +1,24 @@
 {
   "urun": "LastZAutoHelper",
-  "son_surum": "1.2.1",
+  "son_surum": "1.2.2",
   "yayin_tarihi": "2026-09-26",
   "indirme_adresi": "https://github.com/hakansen/lastz-auto-helper/releases/latest/download/LastZAutoHelper-Setup.exe",
   "notlar": {
-    "en": "Update check, English as the default language, groundwork for first-aid automation.",
-    "tr": "Güncelleme denetimi, varsayılan dil İngilizce, ilk yardım otomasyonu altyapısı."
+    "en": "Help is now also given while the chat is open.",
+    "tr": "Sohbet açıkken de yardım veriliyor."
   },
   "gecmis": [
+    {
+      "surum": "1.2.2",
+      "tarih": "2026-09-26",
+      "yeni": [],
+      "gelistirme": [
+        "Alliance help is now also given while the chat is open (the help button shows up on the right side of the chat)"
+      ],
+      "duzeltme": [
+        "The help button next to the chat messages was detected but not pressed"
+      ]
+    },
     {
       "surum": "1.2.1",
       "tarih": "2026-09-26",

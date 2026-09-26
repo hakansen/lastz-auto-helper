@@ -14,7 +14,7 @@
 
 ## Features
 
-- **Automatic alliance help** while the game is on the Headquarters or World screen; only confirmed helps are counted
+- **Automatic alliance help** while the game is on the Headquarters or World screen or the chat is open; only confirmed helps are counted
 - **Game status light** (running / not running) and current screen display
 - **Global shortcut** to turn auto help on or off from anywhere (Ctrl+Alt+H by default)
 - **Warnings** above the taskbar when help cannot be given for a while
