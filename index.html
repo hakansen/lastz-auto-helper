@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Last Z Auto Helper</title>
+  <meta name="description" content="Last Z Auto Helper presses the alliance help button for you in Last Z on Windows.">
+  <link rel="icon" href="favicon.ico">
+  <style>
+    :root {
+      --bg: #16191e; --panel: #1f2329; --card: #2a2f37; --line: #353b45;
+      --text: #e8eaed; --muted: #9aa0a6; --green: #34c759; --blue: #5ea8ff; --orange: #f5a524; --red: #ff453a;
+      color-scheme: dark;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Segoe UI", system-ui, -apple-system, sans-serif; background: var(--bg);
+           color: var(--text); line-height: 1.55; }
+    a { color: var(--blue); }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 0 20px; }
+
+    header.hero { background: linear-gradient(180deg, #232830 0%, var(--bg) 100%); border-bottom: 1px solid var(--line); }
+    .hero .wrap { display: flex; gap: 24px; align-items: center; padding-top: 48px; padding-bottom: 40px; }
+    .hero img { width: 88px; height: 88px; border-radius: 20px; flex: none; }
+    .hero h1 { margin: 0; font-size: 34px; letter-spacing: -0.5px; }
+    .hero p { margin: 6px 0 16px; color: var(--muted); font-size: 17px; }
+    .release { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .btn { display: inline-block; background: var(--green); color: #fff; text-decoration: none; font-weight: 600;
+           padding: 11px 20px; border-radius: 9px; }
+    .btn:hover { filter: brightness(1.08); }
+    .meta { color: var(--muted); font-size: 14px; }
+    .meta strong { color: var(--text); }
+
+    section { padding: 40px 0 8px; }
+    h2 { font-size: 22px; margin: 0 0 18px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+    .card { background: var(--card); border-radius: 12px; padding: 18px 18px 16px; }
+    .card h3 { margin: 0 0 6px; font-size: 16px; }
+    .card p { margin: 0; color: var(--muted); font-size: 14.5px; }
+    .icon { font-size: 22px; margin-bottom: 8px; }
+
+    .list { background: var(--card); border-radius: 12px; padding: 6px 18px; }
+    .list div { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+    .list div:last-child { border-bottom: 0; }
+    .list b { min-width: 130px; color: var(--muted); font-weight: 600; }
+
+    details { background: var(--card); border-radius: 12px; padding: 14px 18px; margin-bottom: 10px; }
+    summary { cursor: pointer; font-weight: 600; }
+    details p { color: var(--muted); margin: 10px 0 2px; font-size: 14.5px; }
+
+    .release-note { border-left: 3px solid var(--line); padding: 0 0 26px 22px; position: relative; }
+    .release-note::before { content: ""; position: absolute; left: -8px; top: 4px; width: 13px; height: 13px;
+                            border-radius: 50%; background: var(--line); }
+    .release-note.latest::before { background: var(--green); }
+    .release-note h3 { margin: 0; font-size: 18px; }
+    .release-note .date { color: var(--muted); font-size: 13.5px; margin-left: 8px; font-weight: 400; }
+    .release-note ul { margin: 10px 0 0; padding: 0; list-style: none; }
+    .release-note li { display: flex; gap: 10px; align-items: baseline; padding: 4px 0; font-size: 15px; }
+    .tag { flex: none; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .4px;
+           padding: 2px 7px; border-radius: 5px; color: #111; }
+    .tag.new { background: var(--green); } .tag.improved { background: var(--blue); } .tag.fixed { background: var(--orange); }
+
+    footer { color: var(--muted); font-size: 13.5px; padding: 36px 0 48px; border-top: 1px solid var(--line); margin-top: 32px; }
+    @media (max-width: 560px) {
+      .hero .wrap { flex-direction: column; align-items: flex-start; padding-top: 32px; }
+      .hero h1 { font-size: 28px; }
+      .list div { flex-direction: column; gap: 2px; }
+    }
+  </style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <img src="img/logo.png" alt="">
+    <div>
+      <h1>Last Z Auto Helper</h1>
+      <p>Presses the alliance help button for you in Last Z on Windows — quietly, in the background.</p>
+      <div class="release">
+        <a class="btn" id="download" href="#">Download</a>
+        <span class="meta">Latest version <strong id="version">…</strong> <span id="date"></span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="features">
+    <h2>Features</h2>
+    <div class="grid">
+      <div class="card"><div class="icon">🤝</div><h3>Automatic alliance help</h3>
+        <p>Detects the help button and presses it while the game is on the Headquarters or World screen. Only confirmed helps are counted.</p></div>
+      <div class="card"><div class="icon">🟢</div><h3>Game status at a glance</h3>
+        <p>A green or red light shows whether the game is running, next to the screen the game is currently on.</p></div>
+      <div class="card"><div class="icon">⌨️</div><h3>Global shortcut</h3>
+        <p>Turn auto help on or off from anywhere with a shortcut of your choice (Ctrl+Alt+H by default).</p></div>
+      <div class="card"><div class="icon">🔔</div><h3>Smart warnings</h3>
+        <p>Get a notification above the taskbar if help cannot be given for a while — game closed, minimized or on another screen.</p></div>
+      <div class="card"><div class="icon">🗂️</div><h3>System tray</h3>
+        <p>Keep it out of the way: minimize to the tray and control it from the tray menu. Optionally start with Windows.</p></div>
+      <div class="card"><div class="icon">🌐</div><h3>English &amp; Turkish</h3>
+        <p>Pick your language on first run or later in Settings; the change applies instantly.</p></div>
+      <div class="card"><div class="icon">🖱️</div><h3>Stays out of your way</h3>
+        <p>Clicks wait until you are idle and your cursor and active window are restored immediately.</p></div>
+      <div class="card"><div class="icon">⬆️</div><h3>Update check</h3>
+        <p>Tells you when a new version is available and opens the download page with one click.</p></div>
+    </div>
+  </section>
+
+  <section id="requirements">
+    <h2>Requirements</h2>
+    <div class="list">
+      <div><b>System</b><span>Windows 10 or Windows 11</span></div>
+      <div><b>Game</b><span>Last Z for PC (Survival.exe)</span></div>
+      <div><b>Game window</b><span>May stay behind other windows, but must not be minimized</span></div>
+      <div><b>Installation</b><span>No administrator rights required</span></div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2>FAQ</h2>
+    <details>
+      <summary>Windows says “Smart App Control blocked this app”</summary>
+      <p>Smart App Control in Windows 11 blocks new apps that are not code-signed yet. Code signing is in progress; signed releases will run without this message.</p>
+      <p>On PCs without Smart App Control, SmartScreen may show “Windows protected your PC”. Click <em>More info</em> → <em>Run anyway</em>.</p>
+    </details>
+    <details>
+      <summary>Why does the mouse move when help is given?</summary>
+      <p>The game only accepts real mouse input. The helper waits until you are idle, clicks, and puts your cursor and active window back instantly.</p>
+    </details>
+    <details>
+      <summary>Can I run it together with other bots?</summary>
+      <p>Avoid running two tools that press the same help button at the same time.</p>
+    </details>
+  </section>
+
+  <section id="changelog">
+    <h2>Version history</h2>
+    <div id="history"><p class="meta">Loading…</p></div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Last Z Auto Helper · Developed by HQN<br>
+    Not affiliated with the developers of Last Z.</div>
+</footer>
+
+<script>
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  fetch("surum.json", { cache: "no-store" }).then(r => r.json()).then(v => {
+    document.getElementById("version").textContent = v.son_surum;
+    document.getElementById("date").textContent = v.yayin_tarihi ? "· " + v.yayin_tarihi : "";
+    if (v.indirme_adresi) document.getElementById("download").href = v.indirme_adresi;
+    const types = [["yeni", "new", "New"], ["gelistirme", "improved", "Improved"], ["duzeltme", "fixed", "Fixed"]];
+    document.getElementById("history").innerHTML = (v.gecmis || []).map((r, i) => `
+      <div class="release-note${i === 0 ? " latest" : ""}">
+        <h3>${esc(r.surum)}<span class="date">${esc(r.tarih || "")}</span></h3>
+        <ul>${types.map(([key, cls, label]) => (r[key] || []).map(item =>
+          `<li><span class="tag ${cls}">${label}</span><span>${esc(item)}</span></li>`).join("")).join("")}</ul>
+      </div>`).join("") || '<p class="meta">No releases yet.</p>';
+  }).catch(() => {
+    document.getElementById("version").textContent = "—";
+    document.getElementById("history").innerHTML = '<p class="meta">Version history could not be loaded.</p>';
+  });
+</script>
+</body>
+</html>

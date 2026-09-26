@@ -1,0 +1,62 @@
+{
+  "urun": "LastZAutoHelper",
+  "son_surum": "1.2.1",
+  "yayin_tarihi": "2026-09-26",
+  "indirme_adresi": "https://github.com/hakansen/lastz-auto-helper/releases/latest/download/LastZAutoHelper-Setup.exe",
+  "notlar": {
+    "en": "Update check, English as the default language, groundwork for first-aid automation.",
+    "tr": "Güncelleme denetimi, varsayılan dil İngilizce, ilk yardım otomasyonu altyapısı."
+  },
+  "gecmis": [
+    {
+      "surum": "1.2.1",
+      "tarih": "2026-09-26",
+      "yeni": [
+        "Update check: the app looks for a new version once a day on startup and on demand from About",
+        "New-version notification that opens the download page with one click",
+        "English is now the default language (Turkish is still available)"
+      ],
+      "gelistirme": [
+        "Groundwork for first-aid automation: the hospital panel, help request and healed-soldier icons are recognised (not enabled yet)",
+        "Code-signing support in the build pipeline (executable, libraries, installer and uninstaller)",
+        "Version and publisher information embedded in the executable",
+        "Website, version information and downloads moved to GitHub"
+      ],
+      "duzeltme": []
+    },
+    {
+      "surum": "1.1.0",
+      "tarih": "2026-09-26",
+      "yeni": [
+        "System tray icon with Show, Start/Stop and Exit menu",
+        "Option to minimize to the system tray",
+        "Multiple languages (English, Turkish); language changes apply instantly",
+        "First-run setup: choose language and preferences",
+        "About window and website link in the status bar",
+        "Start with Windows option"
+      ],
+      "gelistirme": [
+        "Installer asks for its language and passes it to the app",
+        "Uninstaller removes the start-up entry"
+      ],
+      "duzeltme": []
+    },
+    {
+      "surum": "1.0.0",
+      "tarih": "2026-09-26",
+      "yeni": [
+        "Automatic alliance help while the game is on the Headquarters or World screen",
+        "Game status light (Survival.exe running or not) and current screen display",
+        "Start/Stop button and global shortcut (Ctrl+Alt+H by default)",
+        "Help counter for the current session (only confirmed helps are counted)",
+        "Warning notification above the taskbar when help cannot be given for too long"
+      ],
+      "gelistirme": [
+        "Real-mouse clicks that return the cursor and focus instantly and wait for you to be idle",
+        "Single instance protection",
+        "Windows installer (no administrator rights needed)"
+      ],
+      "duzeltme": []
+    }
+  ]
+}
