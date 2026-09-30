@@ -5,11 +5,9 @@
 <p align="center">Presses the alliance help button for you in <b>Last Z</b> on Windows — quietly, in the background.</p>
 
 <p align="center">
-  <a href="https://github.com/hakansen/lastz-auto-helper/releases/latest/download/LastZAutoHelper-Setup.exe"><b>⬇ Download the latest version</b></a>
+  <a href="https://apps.microsoft.com/detail/9NBQ5WHP801J"><b>Get it from Microsoft Store</b></a>
   ·
   <a href="https://hakansen.github.io/lastz-auto-helper/">Website</a>
-  ·
-  <a href="https://github.com/hakansen/lastz-auto-helper/releases">All releases</a>
 </p>
 
 ## Features
@@ -20,7 +18,7 @@
 - **Warnings** above the taskbar when help cannot be given for a while
 - **System tray** support, minimize to tray, optional start with Windows
 - **English and Turkish** interface
-- **Update check** with a one-click download link
+- **Automatic updates** through Microsoft Store
 
 ## Requirements
 
@@ -30,16 +28,12 @@
 
 ## Installation
 
-Download `LastZAutoHelper-Setup.exe` from the [latest release](https://github.com/hakansen/lastz-auto-helper/releases/latest) and run it.
-
-> **Windows blocked the app?** Smart App Control in Windows 11 blocks apps that are not code-signed yet.
-> Code signing is in progress. On PCs without Smart App Control, SmartScreen may show
-> “Windows protected your PC” — click *More info* → *Run anyway*.
+Install it from [Microsoft Store](https://apps.microsoft.com/detail/9NBQ5WHP801J). It is available only there; the Store keeps it up to date.
 
 ## About this repository
 
-This repository only hosts the website, version information and release downloads.
+This repository only hosts the website and version information.
 Last Z Auto Helper is **closed-source**; the application source code is not published here.
 See [LICENSE](LICENSE) for the terms of use and the [privacy policy](https://hakansen.github.io/lastz-auto-helper/privacy.html).
 
-Developed by **HQN**. Not affiliated with, endorsed or sponsored by the developers of Last Z.
+Developed by **Hakan Şen**. Not affiliated with, endorsed or sponsored by the developers of Last Z.

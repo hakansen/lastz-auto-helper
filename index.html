@@ -75,7 +75,7 @@
       <h1>Last Z Auto Helper</h1>
       <p>Presses the alliance help button for you in Last Z on Windows — quietly, in the background.</p>
       <div class="release">
-        <a class="btn" id="download" href="#">Download</a>
+        <a class="btn" id="download" href="https://apps.microsoft.com/detail/9NBQ5WHP801J" target="_blank" rel="noopener">Get it from Microsoft Store</a>
         <span class="meta">Latest version <strong id="version">…</strong> <span id="date"></span></span>
       </div>
     </div>
@@ -101,7 +101,7 @@
       <div class="card"><div class="icon">🖱️</div><h3>Stays out of your way</h3>
         <p>Clicks wait until you are idle and your cursor and active window are restored immediately.</p></div>
       <div class="card"><div class="icon">⬆️</div><h3>Update check</h3>
-        <p>Tells you when a new version is available and opens the download page with one click.</p></div>
+        <p>Installed from Microsoft Store, so new versions arrive automatically through the Store.</p></div>
     </div>
   </section>
 
@@ -111,16 +111,15 @@
       <div><b>System</b><span>Windows 10 or Windows 11</span></div>
       <div><b>Game</b><span>Last Z for PC (Survival.exe)</span></div>
       <div><b>Game window</b><span>May stay behind other windows, but must not be minimized</span></div>
-      <div><b>Installation</b><span>No administrator rights required</span></div>
+      <div><b>Installation</b><span>From Microsoft Store only; no administrator rights required</span></div>
     </div>
   </section>
 
   <section id="faq">
     <h2>FAQ</h2>
     <details>
-      <summary>Windows says “Smart App Control blocked this app”</summary>
-      <p>Smart App Control in Windows 11 blocks new apps that are not code-signed yet. Code signing is in progress; signed releases will run without this message.</p>
-      <p>On PCs without Smart App Control, SmartScreen may show “Windows protected your PC”. Click <em>More info</em> → <em>Run anyway</em>.</p>
+      <summary>Where can I download it?</summary>
+      <p>Last Z Auto Helper is available only from <a href="https://apps.microsoft.com/detail/9NBQ5WHP801J" target="_blank" rel="noopener">Microsoft Store</a>. Store apps are signed by Microsoft, so Smart App Control and SmartScreen do not block them, and updates are installed automatically.</p>
     </details>
     <details>
       <summary>Why does the mouse move when help is given?</summary>
@@ -139,7 +138,7 @@
 </main>
 
 <footer>
-  <div class="wrap">Last Z Auto Helper · Developed by HQN · <a href="privacy.html">Privacy policy</a><br>
+  <div class="wrap">Last Z Auto Helper · Developed by Hakan Şen · <a href="privacy.html">Privacy policy</a><br>
     Not affiliated with the developers of Last Z.</div>
 </footer>
 
@@ -148,7 +147,6 @@
   fetch("surum.json", { cache: "no-store" }).then(r => r.json()).then(v => {
     document.getElementById("version").textContent = v.son_surum;
     document.getElementById("date").textContent = v.yayin_tarihi ? "· " + v.yayin_tarihi : "";
-    if (v.indirme_adresi) document.getElementById("download").href = v.indirme_adresi;
     const types = [["yeni", "new", "New"], ["gelistirme", "improved", "Improved"], ["duzeltme", "fixed", "Fixed"]];
     document.getElementById("history").innerHTML = (v.gecmis || []).map((r, i) => `
       <div class="release-note${i === 0 ? " latest" : ""}">
