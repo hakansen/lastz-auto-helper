@@ -1,13 +1,26 @@
 {
   "urun": "LastZAutoHelper",
-  "son_surum": "1.2.3",
-  "yayin_tarihi": "2026-09-26",
+  "son_surum": "1.3.0",
+  "yayin_tarihi": "2026-10-01",
   "indirme_adresi": "https://apps.microsoft.com/detail/9NBQ5WHP801J",
   "notlar": {
-    "en": "New app icon and Microsoft Store support.",
-    "tr": "Yeni uygulama simgesi ve Microsoft Store desteği."
+    "en": "Works with the game in all 15 languages; shows the game language, your avatar, power and window size; can close game popups.",
+    "tr": "Oyunun 15 dilinin hepsinde çalışır; oyun dilini, avatarınızı, gücünüzü ve pencere boyutunu gösterir; oyunun açılır pencerelerini kapatabilir."
   },
   "gecmis": [
+    {
+      "surum": "1.3.0",
+      "tarih": "2026-10-01",
+      "yeni": [
+        "Works with the game in all 15 of its languages: Headquarters/World detection no longer depends on the Turkish button text",
+        "Shows the game language, your avatar, current power (CP) and the game window size",
+        "Optional: closes game popups that block the screen while you are away (Settings)"
+      ],
+      "gelistirme": [
+        "Better detection at different window sizes (templates now scale with the window height)"
+      ],
+      "duzeltme": []
+    },
     {
       "surum": "1.2.3",
       "tarih": "2026-09-26",
